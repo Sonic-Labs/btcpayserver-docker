@@ -12,8 +12,6 @@ services:
       - "nginx_vhost:/etc/nginx/vhost.d"
       - "nginx_html:/usr/share/nginx/html"
       - "nginx_certs:/etc/nginx/certs:ro"
-    depends_on:
-      - nginx-gen
     links:
     - btcpayserver
   nginx-gen:
