@@ -1,6 +1,6 @@
 version: "3"
 services:
- nginx:
+  nginx:
     restart: unless-stopped
     image: nginx:stable
     container_name: nginx
@@ -12,6 +12,8 @@ services:
       - "nginx_vhost:/etc/nginx/vhost.d"
       - "nginx_html:/usr/share/nginx/html"
       - "nginx_certs:/etc/nginx/certs:ro"
+    depends_on:
+      - nginx-gen
     links:
     - btcpayserver
   nginx-gen:
